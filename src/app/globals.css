@@ -1,8 +1,16 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-primary: #e6ddd7;
+  --color-secondary: #000000;
+  --color-accent: #8b5a2b;
+  --font-tan-mon-cheri: "TAN Mon Cheri", serif;
+  --font-barlow: var(--font-barlow);
+  --font-playfair: "Playfair Display", serif;
 }
 
 @theme inline {
@@ -23,4 +31,24 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#e6ddd7] text-[#000000];
+  }
+}
+
+@layer components {
+  .hero-title {
+    font-family: var(--font-tan-mon-cheri);
+  }
+  
+  .heading {
+    font-family: var(--font-playfair);
+  }
+  
+  .body-text {
+    font-family: var(--font-barlow);
+  }
 }
